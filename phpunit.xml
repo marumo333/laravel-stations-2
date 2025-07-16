@@ -11,6 +11,7 @@
     </testsuites>
     <php>
         <server name="APP_ENV" value="testing" force="true"/>
+        <server name="APP_KEY" value="base64:qgudwu+GNEuSkC+8W3SeftcibZsvp1PNtddr1IbvMuU="/>
         <server name="DB_CONNECTION" value="mysql"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
