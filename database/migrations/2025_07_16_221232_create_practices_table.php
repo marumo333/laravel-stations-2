@@ -17,6 +17,12 @@ return new class extends Migration
                  $table->text('title')->comment('タイトル');
                  $table->timestamps();
         });
+        Schema::create('movies', function (Blueprint $table) {
+                 $table->id();
+                 $table->text('title')->comment('映画タイトル');
+                 $table->text('image_url')->comment('画像URL');
+                 $table->timestamps();
+        });
     }
 
     /**
@@ -25,5 +31,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('practices');
+        Schema::dropIfExists('movies');
     }
 };
