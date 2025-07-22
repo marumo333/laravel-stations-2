@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('practices');
         Schema::create('practices', function (Blueprint $table) {
-            $table->id();
-             Schema::create('practices', function (Blueprint $table) {
                  $table->id();
                  $table->text('title')->comment('タイトル');
-     $table->timestamps();
- });
-            $table->timestamps();
+                 $table->timestamps();
         });
     }
 
