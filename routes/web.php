@@ -11,6 +11,8 @@ Route::get('/practice2', [PracticeController::class, 'sample2']);
 Route::get('/getPractice', [PracticeController::class, 'getPractice']);
 Route::get('/movies', [MovieController::class, 'index']);
 Route::get('/admin/movies', [AdminMovieController::class, 'index']);
+Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
+Route::post('/admin/movies/store', [AdminMovieController::class, 'store']);
 Route::get('/', function () {
     return view('welcome');
 });
