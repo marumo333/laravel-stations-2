@@ -13,6 +13,8 @@ Route::get('/movies', [MovieController::class, 'index']);
 Route::get('/admin/movies', [AdminMovieController::class, 'index']);
 Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
 Route::post('/admin/movies/store', [AdminMovieController::class, 'store']);
+Route::get('/admin/movies/{id}/edit',[AdminMovieController::class,'edit']);
+Route::patch('/admin/movies/{id}/update',[AdminMovieController::class,'update']);
 Route::get('/', function () {
     return view('welcome');
 });

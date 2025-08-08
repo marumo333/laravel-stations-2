@@ -33,6 +33,9 @@
                         <td>{{ $movie->is_showing ? '上映中' : '上映予定' }}</td>
                         <td>{{ $movie->created_at }}</td>
                         <td>{{ $movie->updated_at }}</td>
+                        <td>
+                            <a href="/admin/movies/{{ $movie->id }}/edit">編集</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
