@@ -60,4 +60,12 @@ class AdminMovieController extends Controller
 
         return redirect('/admin/movies');
     }
+    public function destroy($id){
+        $movie = Movie::findOrFail($id);
+        $movieTitle = $movie -> title;
+
+        $movie->delete();
+
+        return redirect('/admin/movies')->with('success', '映画「' . $movieTitle . '」を削除しました。');
+    }
 }

@@ -15,6 +15,8 @@ Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
 Route::post('/admin/movies/store', [AdminMovieController::class, 'store']);
 Route::get('/admin/movies/{id}/edit',[AdminMovieController::class,'edit']);
 Route::patch('/admin/movies/{id}/update',[AdminMovieController::class,'update']);
+Route::delete('/admin/movies/{id}/destroy',[AdminMovieController::class, 'destroy']);
+
 Route::get('/', function () {
     return view('welcome');
 });

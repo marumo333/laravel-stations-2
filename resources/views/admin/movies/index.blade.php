@@ -35,6 +35,11 @@
                         <td>{{ $movie->updated_at }}</td>
                         <td>
                             <a href="/admin/movies/{{ $movie->id }}/edit">編集</a>
+                            <form action="/admin/movies/{{ $movie->id }}/destroy" method="POST" style="display: inline;" onsubmit="return confirm('本当に削除しますか？')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="color: red;">削除</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
@@ -43,5 +48,8 @@
     @else
         <p>映画が登録されていません。</p>
     @endif
+    <div style="margin-top: 20px;">
+        <a href="/admin/movies/create">新しい映画を追加</a>
+    </div>
 </body>
 </html>
