@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AdminMovieController;
+use App\Http\Controllers\SheetController;
 
 // Route::get('URL', [Controllerの名前::class, 'Controller内のfunction名']);
 Route::get('/practice', [PracticeController::class, 'sample']);
@@ -18,6 +19,7 @@ Route::post('/admin/movies/store', [AdminMovieController::class, 'store']);
 Route::get('/admin/movies/{id}/edit', [AdminMovieController::class, 'edit']);
 Route::patch('/admin/movies/{id}/update', [AdminMovieController::class, 'update']);
 Route::delete('/admin/movies/{id}/destroy', [AdminMovieController::class, 'destroy']);
+Route::get('/sheets', [App\Http\Controllers\SheetController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

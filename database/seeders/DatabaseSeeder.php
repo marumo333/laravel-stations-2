@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Practice;
 use Illuminate\Database\Seeder;
+use Database\Seeders\SheetTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        Practice::factory(10)->create();
+        $this->call(SheetTableSeeder::class);
     }
 }
