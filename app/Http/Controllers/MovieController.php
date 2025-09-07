@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
@@ -29,5 +30,16 @@ class MovieController extends Controller
         $movies = $query->paginate(20);
 
         return view('movies.index', compact('movies'));
+    }
+
+    public function show($id)
+    {
+        $movie = Movie::findOrFail($id);
+        $schedules = $movie->schedules()->orderBy('start_time','asc')->get();
+
+        return view('movies.show', [
+        'movie' => $movie,
+        'schedules' => $schedules,
+        ]);
     }
 }
